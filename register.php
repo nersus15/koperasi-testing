@@ -1,4 +1,5 @@
 <?php
+// Cek koneksi ke database
 $conn = mysqli_connect('localhost', 'root', '', 'koperasi-testing');
 
 if (!$conn) {
