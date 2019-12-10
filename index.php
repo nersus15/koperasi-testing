@@ -1,4 +1,5 @@
 <?php
+// Start Session
 session_start();
 if (!isset($_SESSION['isLoggin']) || $_SESSION['isLoggin'] == true) {
     header('Location: /koperasi-testing/admin/dashboard.php');
