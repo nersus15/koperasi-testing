@@ -17,12 +17,22 @@ if (!isset($_POST['email'])) {
         if (password_verify($password, $user['password'])) {
             $_SESSION['userData'] = $user;
             $_SESSION['isLoggin'] = true;
-            header('Location: /koperasi-testing/admin/dashboard.php');
+            // var_dump($user['role']);
+            // var_dump($_SESSION['userData']['role']);
+            // var_dump($user['role'] == 1);
+            // var_dump($user['role'] == 2);
+            // die;
+            if ($user['role'] == 1) {
+                header('Location: /koperasi-testing/admin/dashboard.php');
+            } else if ($user['role'] == 2) {
+                header('Location: /koperasi-testing/member/dashboard.php');
+            }
         } else {
             $_SESSION['message'] = "Password Salah";
+            header('Location: /koperasi-testing/');
         }
     } else {
         $_SESSION['message'] = "User dengan email <b><i>$email</b></i> tidak ditemukan";
+        header('Location: /koperasi-testing/');
     }
-    header('Location: /koperasi-testing/');
 }

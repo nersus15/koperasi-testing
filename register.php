@@ -23,7 +23,7 @@ if (isset($_POST['save'])) {
     $password = password_hash($password, PASSWORD_DEFAULT);
 
     // Syntax sql untuk menambah data ke tabel user
-    $query = "INSERT INTO user VALUES('$id', '$username','$email', '$password', '$photoProfile' )";
+    $query = "INSERT INTO user VALUES('$id', '$username','$email', '$password',2, '$photoProfile' )";
 
     // cek apakah query berhasil (apakah berhasil menambakan data atau tidak)
     if (mysqli_query($conn, $query)) {

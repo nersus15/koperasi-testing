@@ -3,6 +3,9 @@ session_start();
 if (!isset($_SESSION['isLoggin']) || $_SESSION['isLoggin'] == false) {
   header('Location: /koperasi-testing/index.php');
 }
+if ($_SESSION['userData']['role'] == 2) {
+  header('Location: /koperasi-testing/member/dashboard.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
